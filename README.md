@@ -1,5 +1,5 @@
 ## Implementation of the following algorithms:
- - Linear regression
+ - Linear Regression
  - K Nearest Neighbors
  - Support Vector Machines (SVM)
  - Flat Clustering
