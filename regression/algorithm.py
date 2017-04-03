@@ -2,11 +2,26 @@ from statistics import mean
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import style
+import random
 
 style.use('ggplot')
 
-xs = np.array([1, 2, 3, 4, 5], dtype=np.float64)
-ys = np.array([5, 4, 6, 5, 6], dtype=np.float64)
+
+# xs = np.array([1, 2, 3, 4, 5], dtype=np.float64)
+# ys = np.array([5, 4, 6, 5, 6], dtype=np.float64)
+
+def create_dataset(hm, variance, step=2, correlation=False):
+    val = 1
+    ys = []
+    for i in range(hm):
+        y = val + random.randrange(-variance, variance)
+        ys.append(y)
+        if correlation and correlation == 'pos':
+            val += step
+        elif correlation and correlation == 'neg':
+            val -= step
+    xs = [i for i in range(len(ys))]
+    return np.array(xs, dtype=np.float64), np.array(ys, dtype=float64)
 
 
 def best_fit_slope_and_intercept(xs, ys):
