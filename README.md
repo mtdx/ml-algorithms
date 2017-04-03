@@ -1,7 +1,18 @@
 ## Implementation of the following algorithms:
- - Linear Regression
+ - Linear Regression, Logistic Regression
  - K Nearest Neighbors
- - Support Vector Machines (SVM)
+ - Support vector machine (SVM) with kernels (Linear, Poly, RBF)
  - Flat Clustering
  - Hierarchical Clustering
  - Neural Networks
+-  Deep Learning (MLP, CNN, RNN, LSTM)
+-  Random Forests
+-  K-Means
+-  Gaussian Mixture Model
+-  Naive bayes
+-  Principal component analysis (PCA)
+-  Factorization Machines
+-  Restricted Boltzmann Machine (RBM)
+-  t-Distributed Stochastic Neighbor Embedding (t-SNE)
+-  Gradient Boosting Trees (also known as GBDT, GBRT, GBM, XGBoost)
+-  Reinforcement learning (Deep Q learning)
