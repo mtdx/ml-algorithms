@@ -6,7 +6,6 @@ import random
 
 style.use('ggplot')
 
-
 # xs = np.array([1, 2, 3, 4, 5], dtype=np.float64)
 # ys = np.array([5, 4, 6, 5, 6], dtype=np.float64)
 
@@ -21,7 +20,7 @@ def create_dataset(hm, variance, step=2, correlation=False):
         elif correlation and correlation == 'neg':
             val -= step
     xs = [i for i in range(len(ys))]
-    return np.array(xs, dtype=np.float64), np.array(ys, dtype=float64)
+    return np.array(xs, dtype=np.float64), np.array(ys, dtype=np.float64)
 
 
 def best_fit_slope_and_intercept(xs, ys):
@@ -42,13 +41,17 @@ def coefficient_of_determination(ys_orig, ys_line):
     return 1 - (squared_error_regr / squared_error_y_mean)
 
 
+xs, ys = create_dataset(40, 40, 2, correlation='pos')
+
 m, b = best_fit_slope_and_intercept(xs, ys)
 regression_line = [(m * x) + b for x in xs]
-
+predict_x = 8
+propert_y = (m * predict_x) + b
 r_squared = coefficient_of_determination(ys, regression_line)
 print(r_squared)
 
-##plt.scatter(xs,ys,color='#003F72',label='data')
-##plt.plot(xs, regression_line, label='regression line')
-##plt.legend(loc=4)
-##plt.show()
+plt.scatter(xs, ys, color='#003F72', label='data')
+plt.scatter(predict_x, propert_y, color='g', label='predict')
+plt.plot(xs, regression_line, label='regression line')
+plt.legend(loc=4)
+plt.show()
