@@ -22,6 +22,11 @@ def best_fit_slope_and_intercept(xs, ys):
     return m, b
 
 
+# distance between between line and points squared
+def squared_error(ys_orig, ys_line):
+    return sum((ys_line - ys_orig) * (ys_line - ys_orig))
+
+
 m, b = best_fit_slope_and_intercept(xs, ys)
 regression_line = [(m * x) + b for x in xs]
 
