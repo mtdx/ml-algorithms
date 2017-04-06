@@ -28,8 +28,7 @@ def k_nearest_neighbors(data, predict, k=3):
             distances.append([euclidean_distance, group])
 
     votes = [i[1] for i in sorted(distances)[:k]]
-
-    return Counter(votes).most_common(1)[0][0], Counter(votes).most_common(1)[0][1] / k
+    return Counter(votes).most_common(1)[0][0]
 
 
 df = pd.read_csv().read_csv('../datasets/breast-cancer-wisconsin.data.txt')
