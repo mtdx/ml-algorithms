@@ -17,8 +17,7 @@ clf.fit(X_train, y_train)
 accuracy = clf.score(X_test, y_test)
 print(accuracy)
 
-example_measures = np.array([4, 2, 1, 1, 1, 2, 3, 2, 1])
+example_measures = np.array([[4, 2, 1, 1, 1, 2, 3, 2, 1], [4, 2, 1, 1, 1, 2, 3, 2, 1]])
 example_measures = example_measures.reshape(len(example_measures), -1)
-
-predict = clf.predict(example_measures)
-print(predict)
+prediction = clf.predict(example_measures)
+print(prediction)
