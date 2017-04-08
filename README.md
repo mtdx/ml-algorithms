@@ -1,7 +1,7 @@
 ## Implementation of the following algorithms:
  - Linear Regression, Logistic Regression
  - K Nearest Neighbors
- - Support vector machine (SVM) with kernels (Linear, Poly, RBF)
+ - Support vector machine (SVM)
  - Flat Clustering
  - Hierarchical Clustering
  - Neural Networks
