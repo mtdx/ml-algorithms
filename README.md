@@ -2,12 +2,11 @@
  - Linear Regression, Logistic Regression
  - K Nearest Neighbors
  - Support vector machine (SVM) with kernels (Linear, Poly, RBF)
- - Flat Clustering
- - Hierarchical Clustering
+ - Flat Clustering (K-Means)
+ - Hierarchical Clustering (Mean Shift)
  - Neural Networks
 -  Deep Learning (MLP, CNN, RNN, LSTM)
 -  Random Forests
--  K-Means
 -  Gaussian Mixture Model
 -  Naive bayes
 -  Principal component analysis (PCA)
