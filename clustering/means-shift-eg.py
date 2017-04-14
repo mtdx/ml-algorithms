@@ -1,6 +1,6 @@
 import numpy as np
-from sklearn.cluster import MeanShift, KMeans
-from sklearn import preprocessing, cross_validation
+from sklearn.cluster import MeanShift
+from sklearn import preprocessing, model_selection
 import pandas as pd
 import matplotlib.pyplot as plt
 
@@ -68,3 +68,28 @@ y = np.array(df['survived'])
 
 clf = MeanShift()
 clf.fit(X)
+
+labels = clf.labels_
+cluster_centers = clf.cluster_centers_
+
+original_df['cluster_group'] = np.nan
+
+for i in range(len(X)):
+    original_df['cluster_group'].iloc[i] = labels[i]
+
+n_clusters_ = len(np.unique(labels))
+survival_rates = {}
+for i in range(n_clusters_):
+    temp_df = original_df[(original_df['cluster_group'] == float(i))]
+    # print(temp_df.head())
+
+    survival_cluster = temp_df[(temp_df['survived'] == 1)]
+
+    survival_rate = len(survival_cluster) / len(temp_df)
+    # print(i,survival_rate)
+    survival_rates[i] = survival_rate
+
+print(survival_rates)
+print(original_df[(original_df['cluster_group'] == 1)])
+print(original_df[(original_df['cluster_group'] == 0)].describe())
+print(original_df[(original_df['cluster_group'] == 2)].describe())
