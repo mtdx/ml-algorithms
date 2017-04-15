@@ -4,7 +4,7 @@ import tensorflow as tf
 import pickle
 import numpy as np
 
-train_x, train_y, test_x, test_y = create_feature_sets_and_labels('/path/to/pos.txt', '/path/to/neg.txt')
+train_x, train_y, test_x, test_y = create_feature_sets_and_labels('../datasets/pos.txt', '../datasets/neg.txt')
 
 n_nodes_hl1 = 1500
 n_nodes_hl2 = 1500
